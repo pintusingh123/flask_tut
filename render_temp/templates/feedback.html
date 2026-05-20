@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Feedback — Acme Co.</title>
+    <style>
+      :root {
+        --bg: #f7f9fc;
+        --card: #fff;
+        --accent: #0b69ff;
+        --maxw: 980px;
+        --muted: #6b7280;
+      }
+      body {
+        font-family:
+          Inter,
+          Segoe UI,
+          Arial,
+          Helvetica,
+          sans-serif;
+        margin: 0;
+        background: var(--bg);
+        color: #111;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 28px auto;
+        padding: 0 16px;
+      }
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: 10px;
+        border: 1px solid #eef2f7;
+      }
+      label {
+        display: block;
+        margin: 8px 0 6px;
+        font-weight: 600;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #e6edf6;
+      }
+      .btn {
+        margin-top: 12px;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="card">
+        <h1>Feedback</h1>
+        <p>We appreciate your feedback — it helps us improve.</p>
+        <form action="/feedback" method="post">
+          <label for="name">Name (optional)</label>
+          <input id="name" name="name" type="text" />
+
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating">
+            <option>5 - Excellent</option>
+            <option>4 - Good</option>
+            <option>3 - Okay</option>
+            <option>2 - Poor</option>
+            <option>1 - Terrible</option>
+          </select>
+
+          <label for="comments">Comments</label>
+          <textarea id="comments" name="comments" rows="5"></textarea>
+
+          <button class="btn" type="submit">Submit Feedback</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

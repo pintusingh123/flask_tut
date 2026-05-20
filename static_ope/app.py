@@ -21,29 +21,7 @@ def contact():
       return render_template("contact.html")
     except Exception as e:
       print(f"Error: {e}")
-
-@app.route("/services")
-def services():
-    try:
-        return render_template("services.html")
-    except Exception as e:
-        print(f"Error: {e}")
-
-
-@app.route("/feedback")
-def feedback():
-    try:
-        return render_template("feedback.html")
-    except Exception as e:
-        print(f"Error: {e}")
-
-@app.route("/products")
-def products():
-    try:
-        return render_template("products.html")
-    except Exception as e:
-        print(f"Error: {e}")
-
-
+ 
+ 
 if __name__ == "__main__":
  app.run(debug = True)

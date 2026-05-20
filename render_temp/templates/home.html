@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About — Acme Co.</title>
+    <title>Home — Acme Co.</title>
     <style>
       :root {
         --bg: #f7f9fc;
-        --card: #ffffff;
+        --card: #fff;
         --accent: #0b69ff;
-        --muted: #6b7280;
         --maxw: 980px;
+        --muted: #6b7280;
       }
       * {
         box-sizing: border-box;
@@ -49,9 +49,6 @@
         padding: 8px 12px;
         border-radius: 8px;
       }
-      .nav a:hover {
-        background: #eef6ff;
-      }
       .container {
         max-width: var(--maxw);
         margin: 28px auto;
@@ -59,19 +56,10 @@
       }
       .hero {
         background: var(--card);
-        padding: 24px;
+        padding: 32px;
         border-radius: 12px;
-        box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
       }
-      h1 {
-        margin: 0 0 8px;
-        font-size: 28px;
-      }
-      p.lead {
-        margin: 0;
-        color: var(--muted);
-      }
-      .grid {
+      .features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 16px;
@@ -83,9 +71,13 @@
         border-radius: 10px;
         border: 1px solid #eef2f7;
       }
-      .card h3 {
-        margin: 0 0 8px;
-        font-size: 16px;
+      .cta {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
       }
       footer {
         max-width: var(--maxw);
@@ -93,20 +85,6 @@
         padding: 18px 16px;
         color: var(--muted);
         font-size: 14px;
-      }
-      form input,
-      form textarea,
-      .btn {
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #e6edf6;
-      }
-      .btn {
-        background: var(--accent);
-        color: #fff;
-        border: 0;
-        cursor: pointer;
       }
     </style>
   </head>
@@ -126,43 +104,28 @@
 
     <main class="container">
       <section class="hero">
-        <h1>About Acme Co.</h1>
+        <h1>Welcome to Acme Co.</h1>
         <p class="lead">
-          We build reliable, delightful web products that help small teams move
-          faster. Founded in 2015, Acme Co. focuses on simplicity, performance,
-          and great UX.
+          Simple tools that help teams ship faster. Trusted by thousands of
+          teams worldwide.
+        </p>
+        <p style="margin-top: 12px">
+          <a class="cta" href="/products">Explore Products</a>
         </p>
       </section>
 
-      <section class="grid" aria-label="company-overview">
+      <section class="features">
         <div class="card">
-          <h3>Our Mission</h3>
-          <p>
-            Make complex problems simple through thoughtful design and solid
-            engineering.
-          </p>
+          <h3>Fast Setup</h3>
+          <p>Get started in minutes with sensible defaults.</p>
         </div>
         <div class="card">
-          <h3>Our Values</h3>
-          <p>Customer focus, transparency, and continuous improvement.</p>
+          <h3>Secure</h3>
+          <p>Built with security and privacy in mind.</p>
         </div>
         <div class="card">
-          <h3>Leadership</h3>
-          <p>
-            Founded by engineers and designers who love building useful
-            software.
-          </p>
-        </div>
-      </section>
-
-      <section style="margin-top: 22px">
-        <div class="card">
-          <h3>History & Highlights</h3>
-          <ul style="margin: 8px 0 0; padding-left: 18px; color: var(--muted)">
-            <li>2015 — Company founded</li>
-            <li>2018 — First 1,000 customers</li>
-            <li>2022 — Expanded to international markets</li>
-          </ul>
+          <h3>Support</h3>
+          <p>Friendly support and thorough documentation.</p>
         </div>
       </section>
     </main>

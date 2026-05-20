@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Products — Acme Co.</title>
+    <style>
+      :root {
+        --bg: #f7f9fc;
+        --card: #fff;
+        --accent: #0b69ff;
+        --maxw: 980px;
+      }
+      body {
+        font-family:
+          Inter,
+          Segoe UI,
+          Arial,
+          Helvetica,
+          sans-serif;
+        margin: 0;
+        background: var(--bg);
+        color: #111;
+      }
+      .container {
+        max-width: var(--maxw);
+        margin: 28px auto;
+        padding: 0 16px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+      .product {
+        background: var(--card);
+        padding: 16px;
+        border-radius: 10px;
+        border: 1px solid #eef2f7;
+      }
+      .price {
+        color: var(--accent);
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Products</h1>
+      <p>Explore our main product offerings.</p>
+      <section class="grid" style="margin-top: 16px">
+        <div class="product">
+          <h3>Acme Starter</h3>
+          <p>Basic collaboration tools for small teams.</p>
+          <div class="price">Free</div>
+        </div>
+        <div class="product">
+          <h3>Acme Pro</h3>
+          <p>Advanced features and priority support.</p>
+          <div class="price">$12 / month</div>
+        </div>
+        <div class="product">
+          <h3>Acme Enterprise</h3>
+          <p>Custom solutions for larger organizations.</p>
+          <div class="price">Contact us</div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
