@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block title %}Login - Tailwind Flask{% endblock %}
+{% block content %}
+<section
+  class="mx-auto max-w-2xl rounded-3xl bg-slate-900/80 p-10 shadow-2xl shadow-slate-950/40"
+>
+  <div class="space-y-6">
+    <div class="space-y-3 text-center">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300"
+      >
+        Welcome back
+      </p>
+      <h1 class="text-4xl font-bold text-white">Login to your account</h1>
+      <p class="text-slate-400">
+        Enter your credentials to access your dashboard and community features.
+      </p>
+    </div>
+
+    <form class="space-y-5">
+      <div>
+        <label class="mb-2 block text-sm font-medium text-slate-300" for="email"
+          >Email</label
+        >
+        <input
+          class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20"
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+        />
+      </div>
+      <div>
+        <label
+          class="mb-2 block text-sm font-medium text-slate-300"
+          for="password"
+          >Password</label
+        >
+        <input
+          class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20"
+          id="password"
+          type="password"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="flex items-center justify-between text-sm text-slate-400">
+        <label class="flex items-center gap-2">
+          <input
+            type="checkbox"
+            class="h-4 w-4 rounded border-slate-700 bg-slate-900 text-emerald-400 focus:ring-emerald-400"
+          />
+          Remember me
+        </label>
+        <a href="#" class="font-medium text-emerald-300 hover:text-emerald-200"
+          >Forgot password?</a
+        >
+      </div>
+      <button
+        type="submit"
+        class="w-full rounded-2xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+      >
+        Login
+      </button>
+    </form>
+
+    <p class="text-center text-sm text-slate-400">
+      Don’t have an account?
+      <a
+        href="/register"
+        class="font-semibold text-emerald-300 hover:text-emerald-200"
+        >Register now</a
+      >
+    </p>
+  </div>
+</section>
+{% endblock %}

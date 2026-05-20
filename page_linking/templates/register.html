@@ -1,0 +1,108 @@
+{% extends "base.html" %} {% block title %}Register - Tailwind Flask{% endblock
+%} {% block content %}
+<section
+  class="mx-auto max-w-2xl rounded-3xl bg-slate-900/80 p-10 shadow-2xl shadow-slate-950/40"
+>
+  <div class="space-y-6">
+    <div class="space-y-3 text-center">
+      <p
+        class="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300"
+      >
+        Create your account
+      </p>
+      <h1 class="text-4xl font-bold text-white">Join us today</h1>
+      <p class="text-slate-400">
+        Fill in your details to register and start using the app. The form is
+        built to keep users engaged and comfortable.
+      </p>
+    </div>
+
+    <form class="space-y-5">
+      <div>
+        <label
+          class="mb-2 block text-sm font-medium text-slate-300"
+          for="fullname"
+          >Full name</label
+        >
+        <input
+          class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20"
+          id="fullname"
+          type="text"
+          name="fullname"
+          placeholder="Your full name"
+        />
+      </div>
+      <div>
+        <label class="mb-2 block text-sm font-medium text-slate-300" for="email"
+          >Email</label
+        >
+        <input
+          class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20"
+          id="email"
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+        />
+      </div>
+       <div>
+        <label class="mb-2 block text-sm font-medium text-slate-300" for="mobile"
+          >mobile</label
+        >
+        <input
+          class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20"
+          id="mobile"
+          type="tel"
+          name="mobile"
+          placeholder="Your mobile number"
+        />
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label
+            class="mb-2 block text-sm font-medium text-slate-300"
+            for="password"
+            >Password</label
+          >
+          <input
+            class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20"
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <label
+            class="mb-2 block text-sm font-medium text-slate-300"
+            for="confirm"
+            >Confirm password</label
+          >
+          <input
+            class="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20"
+            id="confirm"
+            type="password"
+            name="confirm"
+            placeholder="Confirm password"
+          />
+        </div>
+      </div>
+       
+      <button
+        type="submit"
+        class="w-full rounded-2xl bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+      >
+        Register
+      </button>
+    </form>
+
+    <p class="text-center text-sm text-slate-400">
+      Already have an account?
+      <a
+        href="/login"
+        class="font-semibold text-emerald-300 hover:text-emerald-200"
+        >Login here</a
+      >
+    </p>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% block title %}About Us - Tailwind Flask{% endblock
+%} {% block content %}
+<section
+  class="space-y-8 rounded-3xl bg-slate-900/80 p-10 shadow-2xl shadow-slate-950/30"
+>
+  <div class="max-w-3xl space-y-5">
+    <span
+      class="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 px-4 py-2 text-sm font-semibold text-emerald-300"
+      >About Us</span
+    >
+    <h1 class="text-4xl font-bold text-white sm:text-5xl">
+      Designing modern page experiences for your Flask app.
+    </h1>
+    <p class="text-slate-300">
+      This page demonstrates how Tailwind CSS can make your application feel
+      polished and welcoming. It includes layout, typography, calls to action,
+      and consistent spacing.
+    </p>
+  </div>
+
+  <div class="grid gap-8 lg:grid-cols-2">
+    <div class="rounded-3xl bg-slate-950/80 p-8 shadow-lg shadow-slate-950/20">
+      <h2 class="text-2xl font-semibold text-white">Why choose this layout?</h2>
+      <p class="mt-4 text-slate-400">
+        The design pairs a bold hero section with clean content cards, making it
+        easy for users to read about your product and then move to registration
+        or contact.
+      </p>
+      <ul class="mt-6 space-y-3 text-slate-300">
+        <li class="flex items-start gap-3">
+          <span
+            class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm font-semibold text-slate-950"
+            >1</span
+          >
+          <span>Responsive Tailwind utility classes for fast styling.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span
+            class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm font-semibold text-slate-950"
+            >2</span
+          >
+          <span>Navigation that flows naturally between pages.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span
+            class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-emerald-400 text-sm font-semibold text-slate-950"
+            >3</span
+          >
+          <span>Forms built for engagement and easy conversion.</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="rounded-3xl bg-slate-950/80 p-8 shadow-lg shadow-slate-950/20">
+      <h2 class="text-2xl font-semibold text-white">Our mission</h2>
+      <p class="mt-4 text-slate-400">
+        We want every visitor to understand your product quickly and take
+        action. Clean headings, clear sections, and subtle contrast keep focus
+        on your message.
+      </p>
+      <div class="mt-6 space-y-4 text-slate-300">
+        <div class="rounded-2xl bg-slate-900/70 p-4">
+          <p class="font-semibold text-white">Fast development</p>
+          <p class="text-sm text-slate-400">
+            Use Tailwind’s utility-first classes without compiling.
+          </p>
+        </div>
+        <div class="rounded-2xl bg-slate-900/70 p-4">
+          <p class="font-semibold text-white">Clear storytelling</p>
+          <p class="text-sm text-slate-400">
+            Communicate value with strong headings and visuals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
