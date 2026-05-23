@@ -1,22 +1,132 @@
 {% extends "admin/admin.html" %} {% block title %}Show Employees - My Flask
 App{% endblock %} {% block content %}
 <div
-  class="max-w-4xl mx-auto rounded-3xl bg-slate-900/95 border border-slate-800 p-10 shadow-2xl"
+  class="max-w-6xl mx-auto rounded-3xl bg-slate-900/95 border border-slate-800 p-8 shadow-2xl"
 >
-  <h2 class="text-4xl font-bold text-white mb-4">Employee List</h2>
-  <p class="text-slate-300 mb-6">
-    This is a dummy employee list page. Use it to show employee records or
-    search results.
-  </p>
-  <div class="grid gap-4">
-    <div class="rounded-3xl bg-slate-800 border border-slate-700 p-6">
-      <h3 class="text-xl text-white font-semibold">Jane Smith</h3>
-      <p class="text-slate-300">Marketing Manager</p>
+  <div class="flex items-center justify-between mb-8">
+    <div>
+      <h2 class="text-4xl font-bold text-white">Employee List</h2>
+      <p class="text-slate-300 mt-1">
+        {% if employees|length > 20 %} Top
+        <span class="text-cyan-300 font-semibold">
+          {{ employees|length }}
+        </span>
+        employees from database {% else %} current employees: {{
+        employees|length if employees else 0 }} {% endif %}
+      </p>
     </div>
-    <div class="rounded-3xl bg-slate-800 border border-slate-700 p-6">
-      <h3 class="text-xl text-white font-semibold">Ahmed Khan</h3>
-      <p class="text-slate-300">Sales Executive</p>
+    <a
+      href="/add-employee"
+      class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 py-2 px-5 rounded-2xl font-semibold transition"
+    >
+      + Add Employee
+    </a>
+  </div>
+
+  <div
+    class="rounded-2xl bg-slate-800/50 border border-slate-700 overflow-hidden shadow-lg"
+  >
+    <div
+      class="overflow-y-auto max-h-[600px] scrollbar-thin scrollbar-thumb-cyan-600 scrollbar-track-slate-700"
+    >
+      <table class="w-full text-sm">
+        <thead
+          class="sticky top-0 bg-gradient-to-r from-cyan-600/20 to-indigo-600/20 border-b border-slate-700"
+        >
+          <tr>
+            <th class="px-6 py-4 text-left text-cyan-300 font-semibold">
+              Emp ID
+            </th>
+            <th class="px-6 py-4 text-left text-cyan-300 font-semibold">
+              Full Name
+            </th>
+            <th class="px-6 py-4 text-left text-cyan-300 font-semibold">
+              Email
+            </th>
+            <th class="px-6 py-4 text-left text-cyan-300 font-semibold">
+              Phone
+            </th>
+            <th class="px-6 py-4 text-left text-cyan-300 font-semibold">
+              Position
+            </th>
+            <th class="px-6 py-4 text-left text-cyan-300 font-semibold">
+              Salary
+            </th>
+            <th class="px-6 py-4 text-center text-cyan-300 font-semibold">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-700">
+          {% if employees %} {% for employee in employees %}
+          <tr
+            class="{% if loop.index % 2 == 0 %}bg-slate-900/30{% else %}bg-slate-800/20{% endif %} hover:bg-slate-700/40 transition"
+          >
+            <td class="px-6 py-4 text-slate-300 font-medium">
+              {{ employee[0] }}
+            </td>
+            <td class="px-6 py-4 text-slate-200">{{ employee[1] }}</td>
+            <td class="px-6 py-4 text-slate-300 text-sm">{{ employee[2] }}</td>
+            <td class="px-6 py-4 text-slate-300">{{ employee[3] }}</td>
+            <td class="px-6 py-4 text-slate-300">{{ employee[4] }}</td>
+            <td class="px-6 py-4 text-cyan-300 font-semibold">
+              {{ employee[5] }}
+            </td>
+            <td class="px-6 py-4 text-center">
+              <!-- EDIT BUTTON -->
+              <a
+                href="/edit/{{ employee[0] }}"
+                class="text-blue-400 hover:text-blue-300 text-xs font-semibold mr-3 transition"
+              >
+                Edit
+              </a>
+
+              <!-- DELETE BUTTON -->
+              <form action="/delete/{{ employee[0] }}" method="POST" class="inline">
+                <button
+                  type="submit"
+                  onclick="return confirm('Are you sure?')"
+                  class="text-red-400 hover:text-red-300 text-xs font-semibold transition"
+                >
+                  Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %} {% else %}
+          <tr>
+            <td colspan="7" class="px-6 py-12 text-center text-slate-400">
+              <p class="text-lg">No employees found</p>
+              <p class="text-sm mt-2">Add your first employee to get started</p>
+            </td>
+          </tr>
+          {% endif %}
+        </tbody>
+      </table>
     </div>
   </div>
+
+  <div class="mt-6 text-slate-400 text-sm">
+    <p>
+      Total Employees:
+      <span class="text-cyan-300 font-semibold"
+        >{{ employees|length if employees else 0 }}</span
+      >
+    </p>
+  </div>
 </div>
+
+<style>
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  .scrollbar-thumb-cyan-600::-webkit-scrollbar-thumb {
+    background-color: rgb(34, 211, 238);
+    border-radius: 3px;
+  }
+  .scrollbar-track-slate-700::-webkit-scrollbar-track {
+    background-color: rgb(51, 65, 85);
+    border-radius: 3px;
+  }
+</style>
 {% endblock %}

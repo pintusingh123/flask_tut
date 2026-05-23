@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, redirect, render_template, request
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -51,7 +51,13 @@ def add_employee():
 
 @app.route('/show-employees')
 def show_employees():
-    return render_template('admin/show-employee.html')
+    employees = []  # Will be populated from database
+    mysql = mysql_configuration
+    mycursor = mysql.connection.cursor() # connection with db by cursor obj
+    mycursor.execute("SELECT * FROM employee_data")
+    employees = mycursor.fetchall()
+    mycursor.close()
+    return render_template('admin/show-employee.html', employees=employees)
 
 @app.route('/search-employee')
 def search_employee():
@@ -84,6 +90,16 @@ def add_employee_save():
 
     return render_template('admin/add-employee-result.html', empid=empid, name=name, email=email, mobile=mobile, salary=salary, position=position)
 
+@app.route('/delete/<emp_id>' ,methods=['POST'])
+def delete_employee(emp_id):
+    mysql = mysql_configuration
+    mycursor = mysql.connection.cursor()
+    sqlQuery = "DELETE FROM employee_data WHERE empid = %s"
+    id = emp_id
+    mycursor.execute(sqlQuery, (id,))
+    mysql.connection.commit()
+    mycursor.close()
+    return redirect('/show-employees')
 @app.route('/profile-page')
 def profile_page():
     return render_template('admin/profile.html')
