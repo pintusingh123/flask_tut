@@ -1,0 +1,46 @@
+{% extends "admin/admin.html" %} {% block title %}Admin Home - My Flask App{%
+endblock %} {% block content %}
+<div
+  class="max-w-4xl mx-auto rounded-3xl bg-slate-900/95 border border-slate-800 p-10 shadow-2xl"
+>
+  <h2 class="text-4xl font-bold text-white mb-4">Admin Dashboard</h2>
+  <p class="text-slate-300 mb-6">
+    This is the admin home page. Use the navigation above to go to employee
+    actions, search, and profile pages.
+  </p>
+  <div class="grid gap-4 md:grid-cols-2">
+    <div class="rounded-3xl border border-slate-700 bg-slate-800 p-6">
+      <h3 class="text-xl font-semibold text-white mb-2">Quick Links</h3>
+      <ul class="text-slate-300 space-y-2">
+        <li>
+          <a href="/add-employee" class="text-cyan-300 hover:text-cyan-200"
+            >Add Employee</a
+          >
+        </li>
+        <li>
+          <a href="/show-employees" class="text-cyan-300 hover:text-cyan-200"
+            >Show Employees</a
+          >
+        </li>
+        <li>
+          <a href="/search-employee" class="text-cyan-300 hover:text-cyan-200"
+            >Search Employee</a
+          >
+        </li>
+        <li>
+          <a href="/profile-page" class="text-cyan-300 hover:text-cyan-200"
+            >Profile</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="rounded-3xl border border-slate-700 bg-slate-800 p-6">
+      <h3 class="text-xl font-semibold text-white mb-2">Activity</h3>
+      <p class="text-slate-300">
+        Today there are 4 new tasks for you to review. This is a placeholder
+        section for admin stats and quick actions.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

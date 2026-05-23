@@ -1,0 +1,64 @@
+<!-- Admin header partial: include this from admin pages -->
+<header
+  class="w-full h-20 bg-gradient-to-r from-cyan-600 via-sky-600 to-indigo-700 flex items-center justify-between px-6 shadow-2xl relative"
+>
+  <div>
+    <h1 class="text-4xl font-bold text-white tracking-tight">
+      My Flask Website
+    </h1>
+    <p class="text-sm text-cyan-100/80">Admin interface</p>
+  </div>
+
+  <!-- Mobile Menu Icon -->
+  <button
+    id="mobileMenuBtn"
+    class="md:hidden text-white text-2xl cursor-pointer focus:outline-none"
+    onclick="toggleSidebar()"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+</header>
+
+<!-- Navbar Section -->
+<nav class="w-full bg-slate-900 shadow-xl">
+  <div class="flex items-center justify-between px-6 py-4">
+    <!-- Left Navigation Links -->
+    <div class="flex items-center justify-center space-x-8">
+      <a
+        href="/admin-home"
+        class="text-slate-100 hover:text-cyan-300 font-semibold transition duration-300"
+        >Admin</a
+      >
+      <a
+        href="/add-employee"
+        class="text-slate-100 hover:text-cyan-300 font-semibold transition duration-300"
+        >Add employee</a
+      >
+      <a
+        href="/search-employee"
+        class="text-slate-100 hover:text-cyan-300 font-semibold transition duration-300"
+        >Search Employee</a
+      >
+      <a
+        href="/show-employees"
+        class="text-slate-100 hover:text-cyan-300 font-semibold transition duration-300"
+        >Show Employees</a
+      >
+    </div>
+
+    <!-- Profile Image Dropdown -->
+    <div class="relative group">
+      <a href="/profile-page">
+        <img
+          src="/static/images/profile.png"
+          alt="Profile"
+          class="w-11 h-11 bg-white border border-cyan-400 border-2 rounded-full cursor-pointer"
+          onerror="
+            this.src =
+              'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%2306b6d4%22/><text x=%2250%22 y=%2２60%２ font-size=%２50%２ fill=%２white%２ text-anchor=%２middle%２>👤</text></svg>'
+          "
+        />
+      </a>
+    </div>
+  </div>
+</nav>

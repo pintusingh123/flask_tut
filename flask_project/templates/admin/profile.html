@@ -1,0 +1,29 @@
+{% extends "admin/admin.html" %} {% block title %}Profile - My Flask App{%
+endblock %} {% block content %}
+<div
+  class="max-w-3xl mx-auto rounded-3xl bg-slate-900/95 border border-slate-800 p-10 shadow-2xl"
+>
+  <h2 class="text-4xl font-bold text-white mb-4">Profile</h2>
+  <p class="text-slate-300 mb-6">
+    This is a dummy profile page. Display admin profile details and actions
+    here.
+  </p>
+  <div class="rounded-3xl bg-slate-800 border border-slate-700 p-6">
+    <div class="flex items-center gap-4">
+      <div
+        class="h-16 w-16 rounded-full bg-cyan-500 flex items-center justify-center text-2xl font-bold text-slate-950"
+      >
+        A
+      </div>
+      <div>
+        <p class="text-white font-semibold">Admin User</p>
+        <p class="text-slate-400">admin@example.com</p>
+      </div>
+    </div>
+    <div class="mt-6 space-y-3 text-slate-300">
+      <p>Role: <span class="text-white">Administrator</span></p>
+      <p>Member since: <span class="text-white">January 2024</span></p>
+    </div>
+  </div>
+</div>
+{% endblock %}
